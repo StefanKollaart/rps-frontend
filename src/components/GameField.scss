@@ -1,0 +1,24 @@
+.game-field {
+  &__outer {
+    margin: 80px 0;
+  }
+
+  &__options {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.game-timer {
+  &__outer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  &__count {
+    font-size: 40px;
+    color: #0b3954;
+    font-weight: 800;
+  }
+}

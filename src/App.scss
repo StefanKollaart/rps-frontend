@@ -1,12 +1,13 @@
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
+  background: #fefffe;
 }
 
 .app {
   &__outer {
-    min-height: 100vh;
-    min-width: 100vw;
-    background: #fefffe;
+    max-width: 1024px;
+    width: 90%;
+    margin: 0 auto;
   }
 }

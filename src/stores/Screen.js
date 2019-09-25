@@ -1,12 +1,12 @@
-import { observable, decorate } from "mobx";
+import { observable } from "mobx";
 
 class ScreenStore {
-  currentScreen = "name";
-}
+  @observable currentScreen = "name";
 
-decorate(ScreenStore, {
-  currentScreen: observable
-});
+  setScreen(name) {
+    this.currentScreen = name;
+  }
+}
 
 const screenStore = new ScreenStore();
 export default screenStore;

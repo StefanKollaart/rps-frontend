@@ -1,0 +1,51 @@
+@keyframes scaleUp {
+  0% {
+    font-weight: 400;
+    opacity: 0;
+    right: -70px;
+  }
+
+  20% {
+    opacity: 1;
+    right: -30px;
+  }
+
+  50% {
+    font-weight: 800;
+    opacity: 1;
+    right: -30px;
+  }
+
+  80% {
+    font-weight: 800;
+    opacity: 1;
+    right: -30px;
+  }
+
+  100% {
+    font-weight: 400;
+    opacity: 0;
+    right: -70px;
+  }
+}
+
+.player {
+  &__outer {
+    position: relative;
+  }
+
+  &__name {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+
+  &__addition {
+    opacity: 0;
+    color: #0b3954;
+    font-weight: 800;
+    animation: scaleUp 5s;
+    position: absolute;
+    right: 150px;
+  }
+}

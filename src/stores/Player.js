@@ -1,18 +1,33 @@
-import { observable, decorate } from "mobx";
+import { observable } from "mobx";
+import { baseURL } from "../settings.js";
+import axios from "axios";
+import screenStore from "./Screen";
 
-class ScreenStore {
-  name = "";
+class PlayerStore {
+  @observable name = "";
+  @observable player = {};
 
   setName(name) {
-    console.log(this.name);
     this.name = name;
-    console.log(this.name);
+  }
+
+  async start() {
+    const player = await this.createPlayer();
+    if (player && player.name) {
+      screenStore.setScreen("game");
+    }
+  }
+
+  async createPlayer() {
+    const player = await axios.post(`${baseURL}/players`, {
+      player: {
+        name: this.name
+      }
+    });
+    this.player = player.data;
+    return player.data;
   }
 }
 
-decorate(ScreenStore, {
-  currentScreen: observable
-});
-
-const screenStore = new ScreenStore();
-export default screenStore;
+const playerStore = new PlayerStore();
+export default playerStore;

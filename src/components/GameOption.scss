@@ -1,0 +1,42 @@
+.game-option {
+  &__outer {
+    background: #0b3954;
+    min-width: 100px;
+    color: white;
+    padding: 50px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+
+    &--selected {
+      background: #b3e9c7;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    &--opponent-selected {
+      background: #ef476f;
+      color: black;
+      transform: scale(1.05);
+    }
+  }
+
+  &__emoji {
+    margin: 10px 0;
+  }
+
+  &__label {
+    margin: 5px 0;
+    font-size: 0.8em;
+  }
+}
+
+.game-option__outer.game-option__outer--selected.game-option__outer--opponent-selected {
+  background: linear-gradient(to right, #b3e9c7, #ef476f);
+}
