@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.app {
+  &__outer {
+    min-height: 100vh;
+    min-width: 100vw;
+    background: #fefffe;
+  }
+}

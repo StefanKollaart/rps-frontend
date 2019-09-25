@@ -1,0 +1,41 @@
+.name-screen {
+  &__outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding-top: 100px;
+  }
+
+  &__field {
+    padding: 5px;
+    font-size: 30px;
+    font-weight: 100;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    margin: 20px 0;
+
+    &::placeholder {
+      opacity: 0.3;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 0;
+  }
+
+  &__button {
+    margin: 20px 0;
+    background: none;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    background: #0b3954;
+    color: white;
+    padding: 7px 10px;
+    font-weight: 600;
+    outline: none;
+  }
+}

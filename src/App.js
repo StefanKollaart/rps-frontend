@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import screenStore from "./stores/Screen";
+import { observer } from "mobx-react";
+import NameScreen from "./screens/Name";
+import "./App.scss";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const AppView = observer(
+  class App extends React.Component {
+    constructor(props) {
+      super(props);
 
-export default App;
+      this.screenStore = screenStore;
+    }
+
+    getCurrentScreen = () => {
+      switch (this.screenStore.currentScreen) {
+        case "name":
+          return <NameScreen />;
+          break;
+        default:
+          return <NameScreen />;
+      }
+    };
+
+    render() {
+      return <div className="app__outer">{this.getCurrentScreen()}</div>;
+    }
+  }
+);
+
+export default AppView;
