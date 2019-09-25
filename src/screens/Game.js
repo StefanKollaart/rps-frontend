@@ -4,6 +4,7 @@ import Player from "../components/Player";
 import GameField from "../components/GameField";
 import { observer } from "mobx-react";
 import gameStore from "../stores/Game";
+import { BounceLoader } from "react-spinners";
 import "./Game.scss";
 
 @observer
@@ -29,6 +30,7 @@ class GameScreen extends React.Component {
     } else {
       return (
         <div className="game-field__waiting">
+          <BounceLoader color="#0b3954" />
           <p>Wachten op tweede speler...</p>
         </div>
       );

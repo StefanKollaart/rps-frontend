@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../components/Button";
 import playerStore from "../stores/Player";
 import { observer } from "mobx-react";
 import "./Name.scss";
@@ -28,14 +29,12 @@ class NameScreen extends React.Component {
             this.playerStore.setName(e.target.value);
           }}
         />
-        <button
-          className="name-screen__button"
-          onClick={() => {
+        <Button
+          title="Speel"
+          clicked={() => {
             this.playerStore.start();
           }}
-        >
-          Start spel
-        </button>
+        />
       </div>
     );
   }

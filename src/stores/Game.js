@@ -76,8 +76,11 @@ class GameStore {
       {
         connected: () => {},
         received: data => {
-          console.log(data);
-          this.game = data;
+          if (data == "game_removed") {
+            this.fetch();
+          } else {
+            this.game = data;
+          }
         },
         create: chatContent => {
           this.perform("create", {
