@@ -15,7 +15,7 @@ class Player extends React.Component {
 
   score = () => {
     const game_player = this.gameStore.game.game_players.reduce((acc, val) => {
-      return val.player_id == this.props.id ? val : acc;
+      return val.player_id === this.props.id ? val : acc;
     });
     return game_player.score;
   };
@@ -30,8 +30,8 @@ class Player extends React.Component {
       if (this.gameStore.currentTurn.is_draw) {
         label = "+1";
       } else if (
-        this.playerStore.player.id == this.gameStore.currentTurn.winner_id &&
-        this.props.id == this.playerStore.player.id
+        this.playerStore.player.id === this.gameStore.currentTurn.winner_id &&
+        this.props.id === this.playerStore.player.id
       ) {
         label = "+1";
       } else if (
@@ -42,7 +42,7 @@ class Player extends React.Component {
       }
     }
 
-    if (label == "") {
+    if (label === "") {
       return null;
     } else {
       return <span className="player__addition">{label}</span>;

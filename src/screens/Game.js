@@ -25,7 +25,7 @@ class GameScreen extends React.Component {
   };
 
   renderFieldIfGameStarted = () => {
-    if (this.gameStore.game.players.length == 2) {
+    if (this.gameStore.game.players.length === 2) {
       return <GameField />;
     } else {
       return (

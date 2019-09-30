@@ -15,14 +15,14 @@
     transition: background 0.3s, color 0.3s, transform 0.3s;
 
     &--selected {
-      background: #70a684;
-      color: white;
+      background: #b3e9c7;
+      color: black;
       transform: scale(1.05);
     }
 
     &--opponent-selected {
-      background: #972e47;
-      color: white;
+      background: #ef476f;
+      color: black;
       transform: scale(1.05);
     }
   }

@@ -26,7 +26,7 @@ class GameField extends React.Component {
       if (this.gameStore.currentTurn.is_draw) {
         return "Gelijkspel";
       } else if (
-        this.playerStore.player.id == this.gameStore.currentTurn.winner_id
+        this.playerStore.player.id === this.gameStore.currentTurn.winner_id
       ) {
         return "Jij wint!";
       } else {

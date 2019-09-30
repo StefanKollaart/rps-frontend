@@ -16,9 +16,9 @@ class GameStore {
   time() {
     if (
       this.game.players &&
-      this.game.players.length == 2 &&
+      this.game.players.length === 2 &&
       this.currentTurn &&
-      (!this.timerStarted || this.startedTimerForTurn != this.currentTurn.id)
+      (!this.timerStarted || this.startedTimerForTurn !== this.currentTurn.id)
     ) {
       const createdTime =
         new Date(this.currentTurn.created_at).getTime() / 1000;
@@ -53,7 +53,7 @@ class GameStore {
     const activeTurns = this.game.turns.filter(turn => {
       return turn.active;
     });
-    return activeTurns.length == 0;
+    return activeTurns.length === 0;
   }
 
   @computed get currentTurn() {
@@ -76,7 +76,7 @@ class GameStore {
       {
         connected: () => {},
         received: data => {
-          if (data == "game_removed") {
+          if (data === "game_removed") {
             this.fetch();
           } else {
             this.game = data;

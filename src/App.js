@@ -17,10 +17,8 @@ class App extends React.Component {
     switch (this.screenStore.currentScreen) {
       case "name":
         return <NameScreen />;
-        break;
       case "game":
         return <GameScreen />;
-        break;
       default:
         return <NameScreen />;
     }

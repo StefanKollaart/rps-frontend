@@ -20,16 +20,16 @@ class GameOption extends React.Component {
       this.gameStore.currentTurn &&
       this.gameStore.currentTurn.picks
     ) {
-      this.gameStore.currentTurn.picks.map(pick => {
+      this.gameStore.currentTurn.picks.forEach(pick => {
         if (
-          pick.player_id == this.playerStore.player.id &&
-          pick.picked == this.props.id
+          pick.player_id === this.playerStore.player.id &&
+          pick.picked === this.props.id
         ) {
           extraClasses += " game-option__outer--selected";
         }
         if (
-          pick.player_id != this.playerStore.player.id &&
-          pick.picked == this.props.id
+          pick.player_id !== this.playerStore.player.id &&
+          pick.picked === this.props.id
         ) {
           extraClasses += " game-option__outer--opponent-selected";
         }
@@ -44,7 +44,7 @@ class GameOption extends React.Component {
     return (
       <div
         className={`game-option__outer ${
-          this.gameStore.pickedItem == id ? "game-option__outer--selected" : ""
+          this.gameStore.pickedItem === id ? "game-option__outer--selected" : ""
         } ${this.resultClasses()}`}
         onClick={() => {
           this.gameStore.setTurn(id);
