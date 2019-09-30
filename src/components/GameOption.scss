@@ -15,14 +15,14 @@
     transition: background 0.3s, color 0.3s, transform 0.3s;
 
     &--selected {
-      background: #b3e9c7;
-      color: black;
+      background: #70a684;
+      color: white;
       transform: scale(1.05);
     }
 
     &--opponent-selected {
-      background: #ef476f;
-      color: black;
+      background: #972e47;
+      color: white;
       transform: scale(1.05);
     }
   }
@@ -38,5 +38,5 @@
 }
 
 .game-option__outer.game-option__outer--selected.game-option__outer--opponent-selected {
-  background: linear-gradient(to right, #b3e9c7, #ef476f);
+  background: linear-gradient(to right, #70a684, #972e47);
 }

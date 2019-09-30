@@ -34,7 +34,10 @@ class Player extends React.Component {
         this.props.id == this.playerStore.player.id
       ) {
         label = "+1";
-      } else if (this.props.id !== this.playerStore.player.id) {
+      } else if (
+        this.props.id !== this.playerStore.player.id &&
+        this.gameStore.currentTurn.winner_id !== this.playerStore.player.id
+      ) {
         label = "+1";
       }
     }
@@ -47,10 +50,16 @@ class Player extends React.Component {
   };
 
   render() {
-    const { name } = this.props;
+    const { name, id } = this.props;
     return (
       <div className="player__outer">
-        <h4 className="player__name">
+        <h4
+          className={`player__name ${
+            id === this.playerStore.player.id
+              ? "player__name--self"
+              : "player__name--opponent"
+          }`}
+        >
           {name} ({this.score()}) {this.addition()}
         </h4>
       </div>
